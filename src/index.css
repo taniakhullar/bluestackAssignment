@@ -1,6 +1,11 @@
 .heading{
   /* padding-right: 50%; */
-  color: black;
+  color: #2B416C;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 50px;
 }
 .header{
   background: black;
@@ -77,27 +82,29 @@ tr{
   /* border-bottom: gainsboro 1px solid; */
 }
 .imageurl{
-  width: 15%;
+  /* width: 15%; */
   float: left;
+  width: 40px;
+  height: 40px;
 }
 .pricing{
-  width: 20%;
+  width: 15%;
   margin-left: 3%;
   margin-right:3%
 }
 .file{
-  width: 7%;
+  width: 5%;
   margin-left: 3%;
   margin-right:3%
   
 }
 .calender{
-  width: 7%;
+  width: 5%;
   margin-left: 3%;
   margin-right:3%
 }
 .statastics{
-  width: 7%;
+  width: 5%;
   margin-left: 3%;
   margin-right:3%
 }
@@ -212,6 +219,17 @@ padding-right: 10px
   border-bottom: 1px solid #e6ebf3;
   box-sizing: border-box;
   margin-right: 14%
+}
+.cityColor{
+  color:#9CA2B7;
+  font-style: italic;
+  padding:3px;
+}
+.selectDiv{
+  position: absolute;
+  /* align-content: flex-end; */
+  margin-left: 50%;
+  top: 17%;
 }
 
 @media screen and (max-width: 800px){

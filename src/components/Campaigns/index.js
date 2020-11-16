@@ -1,6 +1,7 @@
 import React from 'react'
 import {upcomingCampaignData,liveCampaignData,pastCampaignData} from './sampleData'
 import CampaignTable from './CampaignTable'
+import {English,German} from '../assets/languages'
 
 class Campaigns extends React.Component{
 
@@ -9,6 +10,7 @@ class Campaigns extends React.Component{
         this.state={
             campaignData: upcomingCampaignData?.data, // stores data of active Tab
             activeTab: 'upcomingCampaign', // current tab
+            currLanguage: 'English'
         };
     }
     //upcoming Campaigns clicked 
@@ -91,23 +93,34 @@ class Campaigns extends React.Component{
             }
         }
     }
+    setLangauge =(e)=>{
+        this.setState({currLanguage:e?.target?.value})
+    }
     render(){
-        let {campaignData,activeTab} = this.state;
+        let {campaignData,activeTab,currLanguage} = this.state;
+        let currLangObj = currLanguage === 'English' ? English : German;
         return(
             <div >
                 <div class='header'>
                 </div>
                 <div class='mainDiv'>
-                <h1 class='heading'>Manage Campaigns</h1>
+                    <h1 class='heading'>{currLangObj?.heading}</h1>
+                <div class='selectDiv'>
+                    <label>{currLangObj?.SelectLanguage}</label><br></br>
+                    <select onChange={(e)=>this.setLangauge(e)}>
+                        <option value='English'>English</option>
+                        <option value='German'>German</option>
+                    </select>
+                </div>
                     <div class='liDiv'>
                         <li class={activeTab === 'upcomingCampaign' ? 'activetab campaginli': 'campaginli'}  onClick={this.upcomingClicked}>
-                            Upcoming Campaigns</li>
+                            {currLangObj?.upcomingCampaigns}</li>
                         <li class={activeTab === 'liveCampaign' ? 'activetab campaginli': 'campaginli'} onClick={this.liveClicked}>
-                            Live Campaigns</li>
+                            {currLangObj?.liveCampaigns}</li>
                         <li class={activeTab === 'pastCampaign' ? 'activetab campaginli': 'campaginli'} onClick={this.pastClicked}>
-                        <span>Past Campaigns</span></li>
+                        {currLangObj?.pastCampaigns}</li>
                     </div>
-                <CampaignTable data={campaignData} reArrangeTables={this.reArrangeTables}/>
+                <CampaignTable data={campaignData} reArrangeTables={this.reArrangeTables} currLanguage={currLanguage}/>
                 </div>
             </div>
         )
