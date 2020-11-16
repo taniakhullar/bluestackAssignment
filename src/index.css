@@ -1,0 +1,238 @@
+.heading{
+  /* padding-right: 50%; */
+  color: black;
+}
+.header{
+  background: black;
+  /* width: 1440px; */
+  height: 80px;
+  color: white;
+  top:0;
+  left:0;
+  width:100%
+}
+ul{
+  list-style-type: none;
+}
+.campaginli{
+  float: left;
+  /* padding-left: 12%; */
+  font-size: 20px;
+  margin-top: 2%;
+  margin-bottom: 7px;
+  list-style-type: none;
+  /* margin: 2%; */
+  margin-right: 2.5%; 
+}
+.activetab{
+  color: green;
+  margin-bottom: 0px;
+  border-bottom: solid green 3px;
+}
+table{
+  position: absolute;
+    margin-top: 3%; 
+    /* margin-left: 8%; */
+    border: solid gainsboro 2.5px;
+    border-collapse: collapse;
+     width: fit-content;
+    height: auto;
+  /* margin-right: 10%; */
+  margin-bottom: 10%;
+  box-shadow: 2px 2px 2px 2px #f0f0f0
+    /* padding-right: 10%; */
+}
+.tableheader{
+  background: #f0f0f0;
+  /* display: flex; */
+
+}
+th{
+  text-align: left;
+  padding: 1.5%;
+  padding-bottom: 12px;
+    padding-top: 12px;
+}
+th:first-child{
+  width: 2%;
+  min-width: 2%;
+}
+th:last-child{
+  width: 20px;
+  min-width: 20px;
+}
+td{
+  /* padding: 1%; */
+  border-bottom: gainsboro 1px solid; 
+}
+td:last-child{
+  padding: 0px;
+  border:0px
+}
+td:first-child{
+  padding: 0px;
+  border:0px
+}
+tr{
+  /* border-bottom: gainsboro 1px solid; */
+}
+.imageurl{
+  width: 15%;
+  float: left;
+}
+.pricing{
+  width: 20%;
+  margin-left: 3%;
+  margin-right:3%
+}
+.file{
+  width: 7%;
+  margin-left: 3%;
+  margin-right:3%
+  
+}
+.calender{
+  width: 7%;
+  margin-left: 3%;
+  margin-right:3%
+}
+.statastics{
+  width: 7%;
+  margin-left: 3%;
+  margin-right:3%
+}
+/* .detailsModal{
+  border: black solid 1px;
+    /* width: max-content; */
+     /* height: max-content;
+    position: fixed;
+    margin: 20%; 
+    /* display: flex;
+    justify-content: center; */
+    /* background: white;
+    position: fixed;
+    transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%); */
+/* } */
+.mainDiv{ 
+  padding-left: 10%;
+  width: auto;
+  height: auto;
+}
+.spangap{
+  margin-right:3%
+}
+.modalPricing{
+  display: flex;
+  justify-content: space-between;
+}
+.modalBtn{
+  width: 25%;
+  height: 40px;
+  background: white;
+  position: relative;
+  margin-left: 40%;
+  margin-top: 10%;
+}
+/* .blurback{
+  opacity: 0.2;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .4)
+} */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 20%;
+  /* padding: 20px; */
+  border: 1px solid #888;
+  height: 40%;
+  width: 25%;
+  align-items: flex-start;
+  /* width: 80%; */
+}
+.modalUpperDiv{
+  height: 50%;
+  /* padding:2px */
+}
+.modalLowerDiv{
+  /* position: absolute; */
+  top:20px
+}
+.modalImg{
+  width:45%;
+  float:left
+}
+.modalLiSpan{
+  color:gray;
+  margin-left:5%
+}
+.modalLiValue{
+  color:gray;
+  margin-right:5%
+}
+.detailNameText{
+  position: relative;
+  top: 50%;
+  text-transform: uppercase;
+}
+.detailCityText{
+  position: relative;
+  top: 50%;
+  color: gray;
+}
+.modalPricingTxt{
+  font-size: 20px;
+  text-align: left;
+  margin-right:40%;
+  margin-left:5%
+  /* padding: 2px */
+}
+.tableLabel{
+  /* padding: .5%; */
+}
+.reportPadding{
+padding-right: 10px
+}
+.liDiv{
+  display: flex;
+  border-bottom: 1px solid #e6ebf3;
+  box-sizing: border-box;
+  margin-right: 14%
+}
+
+@media screen and (max-width: 800px){
+  td:first-child{
+    min-width: 15px
+  }
+  td:last-child{
+    min-width: 15px
+  }
+  td:nth-last-child(2){
+    min-width: 350px;
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin-top: 70%;
+    /* padding: 20px; */
+    border: 1px solid #888;
+    height: fit-content;
+     width: fit-content;
+     align-items: flex-start;
+     top:50%
+    /* width: 80%; */
+  }
+}
