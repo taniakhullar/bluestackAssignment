@@ -4,7 +4,6 @@ import CampaignTable from './CampaignTable'
 import {English,German} from '../assets/languages'
 
 class Campaigns extends React.Component{
-
     constructor(){
         super();
         this.state={
@@ -34,6 +33,7 @@ class Campaigns extends React.Component{
             activeTab: 'pastCampaign'
         })
     }
+    // when campaign reschduled remove it from its current table(if required)
     removeFromTable =(item)=>{
         let {activeTab} = this.state;
         let tabDataMapping={
@@ -41,13 +41,13 @@ class Campaigns extends React.Component{
             'liveCampaign': liveCampaignData?.data,
             'pastCampaign': pastCampaignData?.data,
         }
-        let removeFrom = tabDataMapping[activeTab];
+        let removeFrom = tabDataMapping[activeTab];//code to remove item from table
         let len = removeFrom.length;
         let indexToRemove = removeFrom.indexOf(item);
         let swapVar = removeFrom[len-1];
-        removeFrom[len-1] = item;
+        removeFrom[len-1] = item;//swaping item to be removed with last element
         removeFrom[indexToRemove] = swapVar;
-        removeFrom.length= len-1;
+        removeFrom.length= len-1;//reducing length of data array by 1 to remove last element
         this.setState({campaignData:removeFrom})
     }
     //when campaign reschduled remove it from current table and add in corresponding
@@ -62,10 +62,10 @@ class Campaigns extends React.Component{
         if(schduledDate == currDate && schduleMonth==currMonth && schduleYear ==currYear){// campgain is schduled for today i.e live Campaign
             if(activeTab!== 'liveCampaign'){ //if item is not in live campaign table already
                 this.removeFromTable(item);//remove it from its current table
-                item.createdOn = new Date(date).getTime();
+                item.createdOn = new Date(date).getTime();//update its schduled time
                 liveCampaignData?.data.push(item);//push in required table
                 // set createdon property to schduled time
-            }else{
+            }else{//if we need not to change the table of item we just update its 'createdOn'(schduled time)
                 let ind = campaignData.indexOf(item)
                 campaignData[ind].createdOn =  new Date(date).getTime();
                 this.setState({campaignData});
@@ -98,7 +98,7 @@ class Campaigns extends React.Component{
     }
     render(){
         let {campaignData,activeTab,currLanguage} = this.state;
-        let currLangObj = currLanguage === 'English' ? English : German;
+        let currLangObj = currLanguage === 'English' ? English : German;//decide which object(english/German) to be used depending on language selected by user
         return(
             <div >
                 <div class='header'>

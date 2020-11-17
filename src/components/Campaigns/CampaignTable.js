@@ -2,7 +2,6 @@ import React from 'react'
 import Calender from '../assets/Calender.png'
 import File from '../assets/File.png'
 import report from '../assets/report.png'
-import BitMap from '../assets/Bitmap.png'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import Price from '../assets/Price.png'
@@ -30,7 +29,7 @@ class CampaignTable extends React.Component{
         let theDate = theFullDate.getDate();
         return `${currLangObj?.Months[theMonth]} ${theYear},${theDate}`;
     }
-    // getting difference between event date and today's date
+    // getting difference between event's scheduled date and today's date
     getDayDifference = (timestamp)=>{
         let {currLanguage} = this.props;
         let currLangObj = currLanguage === 'English' ? English : German;
@@ -96,25 +95,25 @@ class CampaignTable extends React.Component{
                         {data.map((item)=>{
                                 return (
                                     <tr>
-                                        <td></td>
-                                        <td>{this.getDate(item.createdOn)}<br></br>
-                                        {this.getDayDifference(item.createdOn)}
+                                        <td ></td>
+                                        <td >{this.getDate(item.createdOn)}<br></br>
+                                        <span class='dayDifference'>{this.getDayDifference(item.createdOn)}</span>
                                         </td>
                                         <td>
-                                            <img class = 'imageurl' src ={item.image_url} alt='image' />
+                                            <img class = 'imageurl' src ={item.image_url} alt='CampaignImage' />
                                             <span>{item.name}</span><br></br>
                                             <span class='cityColor'>{item?.region}</span>
                                         </td>
                                         <td onClick={()=>this.showDetailsModal(item)}>
-                                            <img class = 'pricing' src={Price} ></img>
-                                            <span>{currLangObj?.ViewPricing}</span></td>
-                                        <td><img class = 'file' src ={File} alt='image'/>
+                                            <img class = 'pricing' src={Price} alt='Price'></img>
+                                            <span class='colorClass'>{currLangObj?.ViewPricing}</span></td>
+                                        <td><img class = 'file' src ={File} alt='File'/>
                                             <label class='spangap'>{currLangObj?.CSV}</label>
-                                            <img class = 'statastics' src ={report} alt='image1'/>
+                                            <img class = 'statastics' src ={report} alt='Statastics'/>
                                             <label class='reportPadding'>{currLangObj?.Report}</label>
                                             <span onClick={(e)=>this.openDatePicker(item,e)}>
-                                            <img class = 'calender' src ={Calender} alt='image2' />
-                                            <label >{currLangObj?.ScheduleAgain}</label>
+                                            <img class = 'calender' src ={Calender} alt='Calender' />
+                                            <label class='colorClass'>{currLangObj?.ScheduleAgain}</label>
                                             </span>
                                         </td>
                                         <td></td>
@@ -129,10 +128,10 @@ class CampaignTable extends React.Component{
                         onChange={(e)=>this.dateSelected(e)}
                         closeCalendar={false}
                         onClickOutside={this.closeDatePicker}>
-                        <button onClick={this.closeDatePicker}>Done</button>
+                        <button class='datepickerBtn' onClick={this.closeDatePicker}>Done</button>
                     </DatePicker> 
                     </label>: null}
-                    {showDetailsModal ? <DetailsModal item={this.itemData} hideModal={this.hideModal}/>: null}
+                    {showDetailsModal ? <DetailsModal item={this.itemData} hideModal={this.hideModal} currLanguage={currLanguage}/>: null}
                 </div>
             </div>
         )

@@ -28,8 +28,13 @@ export const English={
         'September':'September',
         'October':'October',
         'November':'November',
-        'December':'December'
-    }
+        'December':'December',
+    },
+    'Pricing':'Pricing',
+    'Close':'Close',
+    'Week':'Week',
+    'Month':'Month',
+    'Year':'Year'
 };
 export const German={
     'heading': 'Kampagnen verwalten',
@@ -62,5 +67,11 @@ export const German={
         'October':'Oktober',
         'November':'November',
         'December':'Dezember'
-    }
+    },
+    'Pricing':'Preisgestaltung',
+    'Close':'Schließen',
+    'Week':'Woche',
+    'Month':'Monat',
+    'Year':'Jahr'
+
 }

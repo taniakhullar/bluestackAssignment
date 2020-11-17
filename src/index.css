@@ -28,11 +28,12 @@ ul{
   list-style-type: none;
   /* margin: 2%; */
   margin-right: 2.5%; 
+  color:#556789;
 }
 .activetab{
-  color: green;
+  color: #83A515;
   margin-bottom: 0px;
-  border-bottom: solid green 3px;
+  border-bottom: solid #83A515 3px;
 }
 table{
   position: absolute;
@@ -49,6 +50,7 @@ table{
 }
 .tableheader{
   background: #f0f0f0;
+  color:#F1F1F4;
   /* display: flex; */
 
 }
@@ -57,6 +59,7 @@ th{
   padding: 1.5%;
   padding-bottom: 12px;
     padding-top: 12px;
+    color: #556789
 }
 th:first-child{
   width: 2%;
@@ -67,8 +70,8 @@ th:last-child{
   min-width: 20px;
 }
 td{
-  /* padding: 1%; */
-  border-bottom: gainsboro 1px solid; 
+  padding: 10px;
+  border-bottom: 1px solid #ECECEC; 
 }
 td:last-child{
   padding: 0px;
@@ -77,9 +80,6 @@ td:last-child{
 td:first-child{
   padding: 0px;
   border:0px
-}
-tr{
-  /* border-bottom: gainsboro 1px solid; */
 }
 .imageurl{
   /* width: 15%; */
@@ -108,26 +108,14 @@ tr{
   margin-left: 3%;
   margin-right:3%
 }
-/* .detailsModal{
-  border: black solid 1px;
-    /* width: max-content; */
-     /* height: max-content;
-    position: fixed;
-    margin: 20%; 
-    /* display: flex;
-    justify-content: center; */
-    /* background: white;
-    position: fixed;
-    transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%); */
-/* } */
 .mainDiv{ 
   padding-left: 10%;
   width: auto;
   height: auto;
 }
 .spangap{
-  margin-right:3%
+  margin-right:3%;
+  color:#7788A3;
 }
 .modalPricing{
   display: flex;
@@ -212,7 +200,8 @@ tr{
   /* padding: .5%; */
 }
 .reportPadding{
-padding-right: 10px
+padding-right: 10px;
+color: #7788A3;
 }
 .liDiv{
   display: flex;
@@ -221,7 +210,7 @@ padding-right: 10px
   margin-right: 14%
 }
 .cityColor{
-  color:#9CA2B7;
+  color:#7788A3;
   font-style: italic;
   padding:3px;
 }
@@ -229,7 +218,20 @@ padding-right: 10px
   position: absolute;
   /* align-content: flex-end; */
   margin-left: 50%;
-  top: 17%;
+  top: 25%;
+  color: #2B416C;
+}
+.datepickerBtn{
+  position: relative;
+  left: 40%;
+  margin: 3%;
+}
+.dayDifference{
+  color:#7788A3;
+  font-style: italic;
+}
+.colorClass{
+  color:#7788A3;
 }
 
 @media screen and (max-width: 800px){
